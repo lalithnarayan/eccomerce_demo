@@ -1,0 +1,77 @@
+// 
+// _footer.scss
+// 
+
+.footer {
+    // bottom: 0;
+    // position: absolute;
+    // right: 0;
+    color: $footer-color;
+    // left: 0px;
+    // height: $footer-height;
+}
+
+.footer-top {
+    background-color: $footer-bg;
+    padding: 16px calc(#{$grid-gutter-width} * 2);
+}
+  
+@media (max-width: 992px) {
+    .footer {
+        left: 0;
+    }
+}
+
+// Enlarge menu
+.vertical-collpsed {
+    .footer {
+        left: $sidebar-collapsed-width;
+    }
+}
+
+body[data-layout="horizontal"] {
+    .footer {
+        left: 0 !important;
+    }  
+}
+
+.company-footer {
+    height: 60px;
+    background-color: #0D1724;
+    color: #9C9C9C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-options {
+    list-style: none;
+
+    a {
+    text-align: left;
+    font-size: $h5-font-size;
+    color: #566370;
+
+    }
+    li {
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.footer-msg {
+    text-align: left;
+    color: #9C9C9C;
+    opacity: 1;
+}
+
+.contact-type {
+    color: #9C9C9C;
+    font-size: $h6-font-size;
+}
+
+.contact-val {
+    color: #566370;
+    font-size: $h5-font-size;
+}

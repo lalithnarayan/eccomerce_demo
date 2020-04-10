@@ -1,0 +1,30 @@
+// 
+// _buttons.scss
+// 
+
+button,
+a {
+  outline: none !important;
+}
+
+
+.btn {
+  border-radius: 2px;
+}
+// Rounded Buttons
+.btn-rounded {
+  border-radius: 30px;
+}
+
+.btn-dark,
+.btn-secondary {
+  color: $gray-200 !important;
+}
+
+
+.btn-link {
+  font-size: 10px;
+  color: #0C83FF;
+  border: none;
+  padding: 0;
+}

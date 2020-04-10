@@ -1,0 +1,46 @@
+<footer class="footer">
+    <div class="footer-top">
+        <div class="row justify-content-between">
+            <div class="col-lg-8">
+                <ul class="footer-options row p-0 mb-4 mt-3">
+                    <li *ngFor="let footer_url of footer_urls" class="col">
+                        <a routerLink="/{{footer_url.url}}">{{footer_url.name}}</a>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col">
+                        <p class="footer-msg">Disclaimer: HDFC Bank SmartBuy is a platform for communication of
+                            offers
+                            extended by Merchants to HDFC Bank’s Customers. HDFC Bank is only communicating the
+                            offers
+                            extended by Merchants to its Customers and not Selling/Rendering any of these
+                            Products/Services. HDFC Bank is merely facilitating the payment to its Customers by
+                            providing the Payment Gateway Services. HDFC Bank is neither guaranteeing nor making any
+                            representation. HDFC Bank is not responsible for Sale/Quality/Features of the
+                            Products/Services under the offers.</p>
+                        <p class="footer-msg">
+                            Site is best viewed in Chrome V23+, Firefox V15+, Safari 6+ and IE10+ at 1024 x 768
+                            pixels
+                            resolution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="footer-contact-details my-3">
+                    <div class="contact-type">CALL</div>
+                    <div class="contact-val">1860 425 3322 / 998 689 6688</div>
+                    <div class="contact-type">(9am to 7pm, Mon to Sat Only)</div>
+                </div>
+                <div class="footer-contact-details my-3">
+                    <div class="contact-type">MAIL</div>
+                    <div class="contact-val">support@smartbuyoffers.com</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="company-footer">© 2020 SmartBuy</div>
+</footer>
