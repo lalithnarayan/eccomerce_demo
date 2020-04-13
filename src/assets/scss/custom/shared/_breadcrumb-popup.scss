@@ -1,0 +1,42 @@
+.popup-container{
+    padding: 3rem;
+    position: absolute;
+    top:5px;
+    left: 0px;
+    .categories-container{
+        border-right: 1px solid #E9E9E9;
+        padding-right: 2rem;
+        box-sizing: border-box;
+    }
+    .popup-item-categories{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0rem;
+        color: #9C9C9C;
+        .arrow-container{
+            text-align: end;
+            .right_arrow{
+                color: #9C9C9C;
+            }
+        }
+        &.active{
+            color: #EC1E25;
+            .right_arrow{
+                color: #EC1E25;
+            }
+        }
+    }
+    .sub-category{
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        .sub-category-text{
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 0.7rem;
+        }
+        .sub-sub-category{
+            font-size: 12px;
+            color: #566370;
+        }
+    }
+}

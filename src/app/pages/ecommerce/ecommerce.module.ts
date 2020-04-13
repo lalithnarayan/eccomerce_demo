@@ -8,7 +8,7 @@ import { WidgetModule } from '../../shared/widget/widget.module';
 
 import { Ng5SliderModule } from 'ng5-slider';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NgbNavModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbNavModule, NgbDropdownModule, NgbPaginationModule, NgbAccordionModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
@@ -22,6 +22,7 @@ import { CartComponent } from './cart/cart.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { CustomersComponent } from './customers/customers.component';
 import { OrdersComponent } from './orders/orders.component';
+import { CarouselComponent } from '../ui/carousel/carousel.component';
 
 const config: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -45,7 +46,9 @@ const config: DropzoneConfigInterface = {
     Ng5SliderModule,
     NgSelectModule,
     NgbPaginationModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    NgbCarouselModule,
+    WidgetModule
   ],
   providers: [
     {

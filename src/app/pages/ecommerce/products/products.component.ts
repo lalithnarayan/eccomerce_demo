@@ -14,17 +14,7 @@ import { Options } from 'ng5-slider';
 export class ProductsComponent implements OnInit {
 
   breadCrumbItems: Array<{}>;
-
-  pricevalue = 250;
-  minVal = 1000;
-  maxVal = 18000;
-  priceoption: Options = {
-    floor: 0,
-    ceil: 50000,
-    translate: (value: number): string => {
-      return '₹' + value;
-    },
-  };
+  showPopup = false;
 
   products = [{
     "id": 1,
@@ -236,53 +226,11 @@ export class ProductsComponent implements OnInit {
     "selling_price": 8750,
     "actual_price": 6615,
     "emi": 4887
-  }]
-
-  filter_options = [
-    {
-      name: 'Availability',
-      key: 'avl',
-      options: [
-        {
-          id: 1,
-          name: 'Exclude out of stock',
-          checked: true,
-        }
-      ],
-    },
-    {
-      name: 'Brand',
-      key: 'brand',
-      options: [
-        {
-          id: 1,
-          name: 'Samsung',
-          checked: true,
-        },
-        {
-          id: 2,
-          name: 'Apple',
-          checked: false,
-        },
-        {
-          id: 3,
-          name: 'Oppo',
-          checked: false,
-        },
-        {
-          id: 4,
-          name: 'Vivo',
-          checked: false
-        }
-      ],
-    }
-  ];
+  }];
 
   constructor() { }
 
   ngOnInit() {
     this.breadCrumbItems = [{ label: 'Ecommerce' }, { label: 'Products', active: true }];
   }
-
-
 }

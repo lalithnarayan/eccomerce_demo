@@ -1,0 +1,45 @@
+<div class="card border-0">
+  <h5 class="text-uppercase">Filters</h5>
+  <div class="pl-0">
+    <ngb-accordion #filterAccordion="ngbAccordion" activeIds="filter-panel-0" opened='true' class="filter-accordion">
+      <ngb-panel *ngFor="let items of filterOptions; index as i" id="filter-panel-{{i}}">
+        <ng-template ngbPanelTitle class="accordion-header">
+          <div class="accordion-header-text">
+            <span class="header-text">{{filterAccordion.isExpanded('filter-panel-'+ i)?'- ':'+ '}}{{items.name}}</span>
+          </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <div *ngIf="items.type === 'range'">
+            <div class="price-values row">
+              <div class="min-price-value col-4">
+                <input id ="minPriceVal" type="number" value="{{priceSlider.value}}" />
+              </div>
+              <div class="max-price-value col-4">
+                <input id ="maxPriceVal" type="number" value="{{priceSlider.highValue}}" />
+              </div>
+            </div>
+            <ng5-slider #priceSlider [(value)]="items.pricevalue" [(highValue)]="items.maxVal" [options]="items.priceOption"></ng5-slider>
+          </div>
+          <div *ngIf="items.type === 'multiSelect'">
+            <div class="product-filter-item">
+              <div>
+                <div class="custom-control custom-checkbox mt-2" *ngFor="let option of items.options">
+                  <input type="checkbox" class="custom-control-input" id="{{items.key}}_{{option.id}}">
+                  <label class="custom-control-label" for="{{items.key}}_{{option.id}}">{{option.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="items.type === 'rateUs'">
+            <div class="custom-control custom-checkbox mt-2" *ngFor="let option of items.options; index as ind">
+              <input type="checkbox" class="custom-control-input" id="productratingCheck{{ind}}">
+              <label class="custom-control-label" for="productratingCheck{{ind}}">{{option.value}} <i class="bx bx-star text-warning"></i>
+                & Above</label>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
