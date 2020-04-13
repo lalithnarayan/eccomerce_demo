@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
     if (this.signupForm.invalid) {
       return;
     }
-
+  }
   //   this.authenticationService.register(this.f.email.value, this.f.password.value).then((res: any) => {
   //     this.successmsg = true;
   //     if (this.successmsg) {

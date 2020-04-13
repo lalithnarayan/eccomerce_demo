@@ -1,0 +1,18 @@
+<div class="row popup-container">
+  <div class="col-6 categories-container">
+    <div *ngFor="let items of categories; index as ind" class="popup-item-categories" [ngClass]="selectedIndex === ind ? 'active':''" (click)= "selectedIndex=ind">
+      <div class="col-9">{{items.name}}</div>
+      <div class="col-3 arrow-container">
+        <span class="right_arrow"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="sub-category" *ngFor="let category of categories[selectedIndex].options; index as index" >
+      <div class="sub-category-text">{{category.name}}</div>
+      <div *ngIf="category.options.length > 0">
+        <div class="sub-sub-category" *ngFor="let subCategory of category.options">{{subCategory.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

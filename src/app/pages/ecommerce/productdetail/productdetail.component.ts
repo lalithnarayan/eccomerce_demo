@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-productdetail',
@@ -12,22 +13,21 @@ import { Component, OnInit } from '@angular/core';
 export class ProductdetailComponent implements OnInit {
 
   breadCrumbItems: Array<{}>;
+  slides: any[];
+  images: any[];
 
-  constructor() { }
-
-  product_offers = [{
+  productOffers = [{
     id: 1,
     name: 'Pay later with Flexipay',
-    
   }, {
     id: 2,
     name: 'Earn 10x Reward Points on HDFC Bank Credit Card'
   }, {
     id: 3,
     name: 'EMI starting at ₹ 1,990/m'
-  }]
+  }];
 
-  color_options = [ {
+  colorOptions = [ {
     id: 1,
     name: 'Prism White',
     url: '',
@@ -37,7 +37,7 @@ export class ProductdetailComponent implements OnInit {
     url: '',
   }];
 
-  size_options = [ {
+  sizeOptions = [ {
     id: 1,
     name: '4GB',
     url: '',
@@ -47,53 +47,62 @@ export class ProductdetailComponent implements OnInit {
     url: '',
   }];
 
-  products_u_may_like = [{
-    "id": 1,
-    "product_name": "Samsung Galaxy A51, 128 GB, 6GB RAM, Prism White",
-    "product_image": "http://dummyimage.com/182x182.png/dddddd/000000",
-    "selling_price": 5680,
-    "actual_price": 7564,
-    "emi": 3237
-  }, {
-    "id": 2,
-    "product_name": "Samsung Galaxy A51, 128 GB, 6GB RAM, Prism White",
-    "product_image": "http://dummyimage.com/182x182.png/5fa2dd/ffffff",
-    "selling_price": 9543,
-    "actual_price": 9894,
-    "emi": 4557
-  }, {
-    "id": 3,
-    "product_name": "Grand Prix",
-    "product_image": "http://dummyimage.com/182x182.png/5fa2dd/ffffff",
-    "selling_price": 5701,
-    "actual_price": 7637,
-    "emi": 3291
-  }, {
-    "id": 4,
-    "product_name": "Samsung Galaxy A51, 128 GB, 6GB RAM, Prism White00",
-    "product_image": "http://dummyimage.com/182x182.png/ff4444/ffffff",
-    "selling_price": 5268,
-    "actual_price": 9154,
-    "emi": 3572
-  }, {
-    "id": 30,
-    "product_name": "Amigo",
-    "product_image": "http://dummyimage.com/182x182.png/5fa2dd/ffffff",
-    "selling_price": 8750,
-    "actual_price": 6615,
-    "emi": 4887
-  }, {
-    "id": 30,
-    "product_name": "Amigo",
-    "product_image": "http://dummyimage.com/182x182.png/5fa2dd/ffffff",
-    "selling_price": 8750,
-    "actual_price": 6615,
-    "emi": 4887
-  }]
+  imageCarousel = [
+    {
+      id : 1,
+      url : 'assets/images/product/img-7.png'
+    },
+    {
+      id : 2,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 3,
+      url : 'assets/images/product/img-7.png'
+    },
+    {
+      id : 4,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 5,
+      url : 'assets/images/product/img-7.png'
+    },
+    {
+      id : 6,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 7,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 8,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 9,
+      url : 'assets/images/product/img-8.png'
+    },
+    {
+      id : 10,
+      url : 'assets/images/product/img-8.png'
+    }
+  ];
 
+  ARROW_LEFT: NgbSlideEventSource.ARROW_LEFT;
+  ARROW_RIGHT: NgbSlideEventSource.ARROW_RIGHT;
+
+  constructor(config: NgbCarouselConfig) {
+    // customize default values of carousels used by this component tree
+    config.showNavigationArrows = false;
+    config.showNavigationIndicators = true;
+    config.interval = 0;
+  }
 
   ngOnInit() {
     this.breadCrumbItems = [{ label: 'Ecommerce' }, { label: 'Product Detail', active: true }];
+    this.slides = this.chunk(this.imageCarousel, 6);
   }
 
   /**
@@ -104,5 +113,14 @@ export class ProductdetailComponent implements OnInit {
     const image = event.target.src;
     const expandImg = document.getElementById('expandedImg') as HTMLImageElement;
     expandImg.src = image;
+  }
+
+  chunk(arr: any, chunkSize: any) {
+    const array = arr;
+    const R = [];
+    for (let i = 0, len = array.length; i < len; i += chunkSize) {
+      R.push(array.slice(i, i + chunkSize));
+    }
+    return R;
   }
 }

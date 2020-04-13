@@ -1,8 +1,43 @@
-<!-- breadcrumb item -->
-<div class="row">
-    <div class="col-12">
-        <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="mb-0 font-size-18">{{ title }}</h4>
+<div>
+    <div class="row carousel-title-container">
+        <h4 style="text-transform: uppercase;">{{title}}</h4>
+        <div class="col-sm-2 col-md-2 col-sm-2 arrow-container">
+            <!-- <img src="assets/images/icons/left_arrow.svg" class="left-arrow" />
+            <img src="assets/images/icons/right_arrow.svg" class="right-arrow" /> -->
+            <span class="left_arrow" (click)="productCarousel.prev(ARROW_LEFT)"></span>
+            <span class="right_arrow" (click)="productCarousel.next(ARROW_RIGHT)"></span>
         </div>
     </div>
-</div>
+    <div class="row carousel-container">
+        <ngb-carousel #productCarousel data-interval="false">
+            <ng-template ngbSlide *ngFor="let slide of slides" class="carousel-template">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6" *ngFor="let item of slide">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="product-img position-relative">
+                          <img src={{item.product_image}} alt="{{item.product_name}}"
+                            class="img-fluid mx-auto d-block">
+                        </div>
+                        <div class="product-name mt-3">
+                          {{item.product_name}}
+                        </div>
+                        <div class="d-flex justify-content-between my-2">
+                          <div>
+                            <div class="product-val">₹ {{item.selling_price}}</div>
+                            <div class="product-sec-text strike-through">₹ {{item.actual_price}}</div>
+                          </div>
+                          <div>
+                            <div class="product-val">₹ {{item.emi}}</div>
+                            <div class="product-sec-text">Lowest EMI</div>
+                          </div>
+                        </div>
+                        <div class="product-sec-text">
+                          Pay later with Flexipay
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+  </div>
