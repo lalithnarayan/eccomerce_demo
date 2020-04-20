@@ -21,6 +21,7 @@
   height: $header-height;
   padding: 0 calc(#{$grid-gutter-width} / 2) 0 0;
   border: 1px solid $header-border;
+
   .dropdown.show {
     .header-item {
       background-color: $gray-100;
@@ -35,42 +36,46 @@
 }
 
 .logo {
-  line-height: 100px;
+  line-height: 80px;
 
   .logo-sm {
     display: none;
   }
 }
 
-.logo-light {
-  display: none;
-}
 
 /* Search */
 
 .app-search {
-  padding: calc(#{$header-height - 60px} / 2) 0;
-
   .form-control {
-    height: 60px;
     padding-right: 40px;
     background-color: $topbar-search-bg;
     box-shadow: none;
     border: 1px solid #BFBFBF;
     border-radius: 4px;
-    width: 500px;
-    padding: 12px 16px; 
+    padding: 12px 16px;
+    height: auto;
   }
 
-  span {
+  button {
     position: absolute;
     z-index: 10;
-    font-size: 24px;
-    line-height: 60px;
-    right: 16px;
-    top: 0;
-    color: $gray-600;
+    font-size: 18px;
+    color: #6C6C6C;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    background: transparent;
+    border: none;
+    padding-right: 16px;
   }
+}
+
+.top-bar-button {
+  font-size: 16px;
+  color: #566370;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 // Mega menu
@@ -103,9 +108,10 @@
   }
 }
 
-.page-content {
-  padding: calc(#{$header-height} + 70px + #{$grid-gutter-width}) calc(#{$grid-gutter-width} / 2) $footer-height calc(#{$grid-gutter-width} / 2);
-}
+// .page-content {
+//   // padding: calc(#{$header-height} + 70px + #{$grid-gutter-width}) calc(#{$grid-gutter-width} / 2) $footer-height calc(#{$grid-gutter-width} / 2);
+//   // padding: 55px;
+// }
 
 .header-item {
   height: $header-height;
@@ -380,6 +386,33 @@ body[data-layout="horizontal"] {
   body[data-layout="horizontal"] {
     .page-content {
       margin-top: 15px;
+    }
+  }
+}
+
+
+.dashboard-carousel {
+  img {
+    width: 100%;
+    height: 320px;
+  }
+  .carousel {
+    height: 340px;
+    outline: none;
+  }
+  .carousel-indicators {
+    margin: 0px;
+    li {
+      height: 4px;
+      width: 4px;
+      border-radius: 50%;
+      border: 1px solid #566370;
+    }
+
+    .active {
+      width: 8px;
+      background: #566370 0% 0% no-repeat padding-box;
+      border-radius: 4px;
     }
   }
 }

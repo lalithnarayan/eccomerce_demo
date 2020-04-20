@@ -14,12 +14,8 @@ import { ChartType } from './dashboard.model';
  * Dashboard component
  */
 export class DashboardComponent implements OnInit {
-
-  emailSentBarChart: ChartType;
-  monthlyEarningChart: ChartType;
-  transactions;
-  statData;
-
+  
+  dashboard_options = ["mobile", "camera", "headphone", "laptop", "Refrigerators", "Bicycle", "Handbag", "homedecor"]
   constructor() { }
 
   ngOnInit() {
@@ -34,10 +30,7 @@ export class DashboardComponent implements OnInit {
    * Fetches the data
    */
   private fetchData() {
-    this.emailSentBarChart = emailSentBarChart;
-    this.monthlyEarningChart = monthlyEarningChart;
-    this.transactions = transactions;
-    this.statData = statData;
+
   }
 
 }

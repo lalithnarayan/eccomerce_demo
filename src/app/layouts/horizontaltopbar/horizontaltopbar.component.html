@@ -1,43 +1,46 @@
 <div class="topnav">
-  <div class="container-fluid">
-    <nav class="navbar navbar-light navbar-expand-lg topnav-menu active">
-      <div class="collapse navbar-collapse active" id="topnav-menu-content">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown" *ngFor="let header_option of menu_options_mapping">
-            <a class="nav-link dropdown-toggle arrow-none" (click)="onMenuClick($event)" href="javascript: void(0);"
-              id="topnav-components" role="button">
-              {{header_option.name}} <div class="arrow-down"></div>
-            </a>
-            <div class="dropdown-menu">
-              <a *ngFor="let main_options of header_option.options" routerLink="{{main_options.url}}"
-                class="dropdown-item side-nav-link-ref">
-                <div class="d-flex">
-                    <div>{{main_options.name}}</div>
-                </div>
-                <div class="dropdown-item-desc">{{main_options.desc}}</div>
+  <div class="container">
+    <div class="row">
+      <nav class="navbar navbar-light navbar-expand-lg topnav-menu active w-100">
+        <div class="collapse navbar-collapse active" id="topnav-menu-content">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown" *ngFor="let header_option of menu_options_mapping">
+              <a class="nav-link dropdown-toggle arrow-none" (click)="onMenuClick($event)" href="javascript: void(0);"
+                id="topnav-components" role="button">
+                {{header_option.name}} <div class="arrow-down"></div>
               </a>
-              <!-- <div class="dropdown">
-                <a class="dropdown-item dropdown-toggle arrow-none" href="javascript: void(0);" id="topnav-contact"
-                  role="button" (click)="onMenuClick($event)">
-                  Contacts <div class="arrow-down"></div>
+              <div class="dropdown-menu">
+                <a *ngFor="let main_options of header_option.options" routerLink="{{main_options.url}}"
+                  class="dropdown-item side-nav-link-ref">
+                  <div class="d-flex">
+                    <div>{{main_options.name}}</div>
+                  </div>
+                  <div class="dropdown-item-desc">{{main_options.desc}}</div>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="topnav-contact">
-                  <a routerLink="/contacts/grid" class="dropdown-item side-nav-link-ref" routerLinkActive="active">User
-                    Grid</a>
-                  <a routerLink="/contacts/list" class="dropdown-item side-nav-link-ref" routerLinkActive="active">User
-                    List</a>
-                  <a routerLink="/contacts/profile" class="dropdown-item side-nav-link-ref"
-                    routerLinkActive="active">Profile</a>
-                </div>
-              </div> -->
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="sec-header-right-text text-right">
-        <div class="sm-text">Need Help with Bookings? </div>
-        <div class="lrg-text"> <span class="sm-text">Call </span>18604251188/ 9986286688</div>
-      </div>
-    </nav>
+                <!-- <div class="dropdown">
+                      <a class="dropdown-item dropdown-toggle arrow-none" href="javascript: void(0);" id="topnav-contact"
+                        role="button" (click)="onMenuClick($event)">
+                        Contacts <div class="arrow-down"></div>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="topnav-contact">
+                        <a routerLink="/contacts/grid" class="dropdown-item side-nav-link-ref" routerLinkActive="active">User
+                          Grid</a>
+                        <a routerLink="/contacts/list" class="dropdown-item side-nav-link-ref" routerLinkActive="active">User
+                          List</a>
+                        <a routerLink="/contacts/profile" class="dropdown-item side-nav-link-ref"
+                          routerLinkActive="active">Profile</a>
+                      </div>
+                    </div> -->
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="sec-header-right-text text-right">
+          <div class="sm-text">Need Help with Bookings? </div>
+          <div class="lrg-text"> <span class="sm-text">Call </span>18604251188/ 9986286688</div>
+        </div>
+      </nav>
+    </div>
+
   </div>
 </div>

@@ -1,57 +1,40 @@
-<header id="page-topbar">
-  <div class="navbar-header">
-    <div class="d-flex">
-      <!-- LOGO -->
-      <div class="navbar-brand-box">
-        <a href="/" class="logo logo-dark">
-          <span class="logo-sm">
-            <img src="assets/images/logo.svg" alt="" height="22">
-          </span>
-          <span class="logo-lg">
-            <img src="assets/images/logo-dark.png" alt="" height="50">
-          </span>
-        </a>
-      </div>
+<header class="header">
 
-      <!-- <button type="button" class="btn btn-sm px-3 font-size-16 header-item" id="vertical-menu-btn"
-        (click)="toggleMobileMenu($event)">
-        <i class="fa fa-fw fa-bars"></i>
-      </button> -->
-
-      <!-- App Search-->
-      <form class="app-search d-none d-lg-block">
-        <div class="position-relative">
-          <input type="text" class="form-control" placeholder="Search for Categories, Vouchers, Offers">
-          <span class="bx bx-search-alt"></span>
-        </div>
-      </form>
-
-    </div>
-
-    <div class="d-flex">
-
-      <!-- <div class="dropdown d-inline-block d-lg-none ml-2" ngbDropdown>
-        <button type="button" class="btn header-item noti-icon" id="page-header-search-dropdown" data-toggle="dropdown"
-          aria-haspopup="true" ngbDropdownToggle aria-expanded="false">
-          <i class="mdi mdi-magnify"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" ngbDropdownMenu
-          aria-labelledby="page-header-search-dropdown">
-
-          <form class="p-3">
-            <div class="form-group m-0">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                </div>
-              </div>
+  <div class="header_main">
+    <div class="container">
+      <div class="row">
+        <!-- Logo -->
+        <div class="col-lg-2 col-sm-3 col-3 order-1">
+          <div class="logo_container">
+            <div class="logo"><a href="#">
+                <img src="assets/images/logo-dark.png" alt="" height="50">
+              </a></div>
+          </div>
+        </div> <!-- Search -->
+        <div class="col-lg-5 col-12 order-lg-2 order-3 text-lg-left text-right align-self-center offset-1">
+          <div class="app-search">
+            <form action="#" class="position-relative clearfix">
+              <input type="search" required="required" class="form-control"
+                placeholder="Search for Categories, Vouchers, Offers">
+              <button type="submit" value="Submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div> <!-- Wishlist -->
+        <div class="col-lg-3 col-9 order-lg-3 order-2 text-lg-left text-right align-self-center offset-1">
+          <div class="d-flex flex-row align-items-center justify-content-between">
+              <div class="top-bar-button"><i class="fa fa-shopping-cart"></i></div>
+            <div class="top-bar-button">
+              Orders
             </div>
-          </form>
+            <div class="top-bar-button">
+              Login
+            </div>
+          </div>
         </div>
-      </div> -->
-
+      </div>
     </div>
-  </div>
+  </div> <!-- Main Navigation -->
   <app-horizontaltopbar></app-horizontaltopbar>
 </header>

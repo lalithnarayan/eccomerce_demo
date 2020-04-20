@@ -1,31 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-// tslint:disable-next-line: max-line-length
-import { NgbCollapseModule, NgbDatepickerModule, NgbTimepickerModule, NgbDropdownModule, NgbCarouselModule, NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
-import { ClickOutsideModule } from 'ng-click-outside';
-
-import { PagetitleComponent } from './pagetitle/pagetitle.component';
-import { HorizontalCarouselComponent } from './horizontal_carousel/horizontal_carousel.component';
-import { FilterComponent } from './filter/filter.component';
 import { Ng5SliderModule } from 'ng5-slider';
-import { BreadCrumbPopupComponent } from './breadcrumb_popup/breadcrumb_popup.component';
+import { HorizontalCarouselComponent } from './horizontal_carousel/horizontal_carousel.component';
+import { NgbCollapseModule, NgbDropdownModule, NgbAccordionModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ClickOutsideModule } from 'ng-click-outside';
+import { FilterComponent } from './filter/filter.component';
+import { PagetitleComponent } from './pagetitle/pagetitle.component';
 
 @NgModule({
-  declarations: [PagetitleComponent, HorizontalCarouselComponent, FilterComponent, BreadCrumbPopupComponent],
+  declarations: [PagetitleComponent, FilterComponent, HorizontalCarouselComponent],
   imports: [
     CommonModule,
-    FormsModule,
     ClickOutsideModule,
     NgbCollapseModule,
-    NgbDatepickerModule,
-    NgbTimepickerModule,
     NgbDropdownModule,
-    NgbCarouselModule,
+    NgbAccordionModule,
     Ng5SliderModule,
-    NgbAccordionModule
+    NgbCarouselModule
   ],
-  exports: [PagetitleComponent, HorizontalCarouselComponent, FilterComponent, BreadCrumbPopupComponent]
+  exports: [PagetitleComponent, FilterComponent, HorizontalCarouselComponent]
 })
 export class UIModule { }

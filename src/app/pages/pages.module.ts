@@ -1,37 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-import { NgbNavModule, NgbDropdownModule, NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgApexchartsModule } from 'ng-apexcharts';
-
+import { NgbNavModule, NgbDropdownModule, NgbAccordionModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetModule } from '../shared/widget/widget.module';
 import { UIModule } from '../shared/ui/ui.module';
-
-import { FullCalendarModule } from '@fullcalendar/angular';
-
 import { PagesRoutingModule } from './pages-routing.module';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { EcommerceModule } from './ecommerce/ecommerce.module';
-import { EmailModule } from './email/email.module';
-// import { InvoicesModule } from './invoices/invoices.module';
-// import { ProjectsModule } from './projects/projects.module';
-// import { TasksModule } from './tasks/tasks.module';
-// import { ContactsModule } from './contacts/contacts.module';
-import { UtilityModule } from './utility/utility.module';
-import { UiModule } from './ui/ui.module';
-import { FormModule } from './form/form.module';
-// import { TablesModule } from './tables/tables.module';
-import { IconsModule } from './icons/icons.module';
-// import { ChartModule } from './chart/chart.module';
-// import { CalendarComponent } from './calendar/calendar.component';
-// import { MapsModule } from './maps/maps.module';
-// import { ChatComponent } from './chat/chat.component';
+import { Ng5SliderModule } from 'ng5-slider';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -39,34 +18,19 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [ DashboardComponent],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    FormsModule,
     NgbDropdownModule,
-    NgbModalModule,
     PagesRoutingModule,
-    NgApexchartsModule,
-    ReactiveFormsModule,
-    EcommerceModule,
-    EmailModule,
-    // InvoicesModule,
-    // ProjectsModule,
+    NgbCarouselModule,
     UIModule,
-    // TasksModule,
-    // ContactsModule,
-    UtilityModule,
-    UiModule,
-    FormModule,
-    // TablesModule,
-    IconsModule,
-    // ChartModule,
+    NgbAccordionModule,
     WidgetModule,
-    // MapsModule,
-    FullCalendarModule,
     NgbNavModule,
-    NgbTooltipModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    Ng5SliderModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     {
