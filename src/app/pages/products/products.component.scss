@@ -1,0 +1,37 @@
+.product-name {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000DE;
+}
+
+.product-sec-text {
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #6C6C6C;
+}
+
+.strike-through{
+    text-decoration: line-through;
+}
+
+.product-val {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.44px;
+    color: #000000DE;
+}
+
+.product-filter-item {
+    padding: 14px 0px;
+    border-bottom: 1px solid #E9E9E9;
+    &:first-child{
+        border-top: 1px solid #E9E9E9;
+    
+    }
+}
+
+.product-filter-header {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
